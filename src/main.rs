@@ -17,20 +17,19 @@ fn main() {
         some_bool: true,
         some_int: 22,
     };
-//made it mutable so could be changes
+    let is_this_smaller = random_info_var.is_smaller(9);
+    //made it mutable so could be changes
     let mut dougs_var = DougsData{
         some_int:80,
         some_float:8.9,
         some_bool:true,
-        random: RandomInfo{
-            some_bool: false,
-            some_int: 88,
-        },
+    //here we used double colon to access function because Self is defined on type with capital S
+        random: RandomInfo::new(true),
     };
-//trying to mutate 
+    //trying to mutate 
     dougs_var.some_int = 100;
 
-//instantiated using existing values
+    //instantiated using existing values
     let dougs_var_2 = DougsData{
         some_int: 7,
         ..dougs_var
